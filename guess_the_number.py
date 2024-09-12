@@ -16,8 +16,12 @@ def generate_secret(low, high):
 
 
 def get_guess():
-    """ get user's guess, as an integer number """
-    return int(input('Guess the secret number? '))
+    """ get user's guess, as an integer number, apply validation """
+    while True:
+        try:
+            return int(input('Guess the secret number? '))
+        except ValueError:
+            print('Invalid input. Please enter a integer number.')
 
 
 def check_guess(guess, secret):
